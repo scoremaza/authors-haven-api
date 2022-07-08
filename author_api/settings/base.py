@@ -18,11 +18,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DJANGO_DEBUG", False)
-
-
 
 
 # Application definition
@@ -44,6 +41,7 @@ THIRD_PARTY_APPS = [
     'phonenumber_field',
     'drf_yasg',
     'corsheaders',
+    'djcelery_email',
 ]
 
 LOCAL_APPS = [
@@ -91,7 +89,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'author_api.wsgi.application'
 
 
-DATABASES={"default": env.db("DATABASE_URL")}
+DATABASES = {"default": env.db("DATABASE_URL")}
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
@@ -144,7 +142,7 @@ MANAGERS = ADMINS
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/staticfiles/'
-STATIC_ROOT = str(ROOT_DIR/ 'staticfiles')
+STATIC_ROOT = str(ROOT_DIR / 'staticfiles')
 STATICFILES_DIR = []
 STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
@@ -160,21 +158,28 @@ MEDIA_ROOT = str(ROOT_DIR / "mediafiles")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CORS_URLS_REGEX=r"^/api/.*$"
+CORS_URLS_REGEX = r"^/api/.*$"
 
-AUTH_USER_MODEL="users.User"
+AUTH_USER_MODEL = "users.User"
 
-LOGGING ={
-    "version":1,
+CELERY_BROKER_URL = env("CELERY_BROKER")
+CELERY_RESULT_BACKEND = env("CELERY_BACKEND")
+CELERY_TIMEZONE = "US/Eastern"
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_TASK_SERIALIZER = "json"
+CELERY_RESULT_SERIALIZER = "json"
+
+LOGGING = {
+    "version": 1,
     "disable_existing_loggers": False,
-    "formatters":{
-        "verbose":{
+    "formatters": {
+        "verbose": {
             "format": "%(levelname)s %(name)-12s %(asctime)s %(module)s " "\
             %(process)d %(thread)d %(message)s"
         }
     },
-    "handlers":{
-        "console":{
+    "handlers": {
+        "console": {
             "level": "DEBUG",
             "class": "logging.StreamHandler",
             "formatter": "verbose",
