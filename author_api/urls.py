@@ -11,7 +11,7 @@ schema_view = get_schema_view(
         title="Authors API",
         default_version="v1",
         description="API endpoints for the Authors API",
-        contact=openapi.Contact(email="contact@snippets.local"),
+        contact=openapi.Contact(email="admin@enlighten-e.com"),
         license=openapi.License(name="MIT License"),
     ),
     public=True,
@@ -25,6 +25,12 @@ urlpatterns = [
     path("api/v1/auth/", include("djoser.urls")),
     path("api/v1/auth/", include("djoser.urls.jwt")),
     path("api/v1/profiles/", include("core_apps.profiles.urls")),
+    path("api/v1/articles/", include("core_apps.articles.urls")),
+    path("api/v1/ratings/", include("core_apps.ratings.urls")),
+    path("api/v1/vote/", include("core_apps.reactions.urls")),
+    path("api/v1/favorite/", include("core_apps.favorites.urls")),
+    path("api/v1/comments/", include("core_apps.comments.urls")),
+    path("api/v1/haystack/", include("core_apps.search.urls")),
     
 ]
 
