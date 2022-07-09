@@ -16,3 +16,7 @@ EMAIL_PORT = env("EMAIL_PORT")
 DEFAULT_FROM_EMAIL = "info@authors-haven.com"
 DOMAIN = env("DOMAIN")
 SITE_NAME = "Authors Haven"
+
+# CORS HEADERS
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
