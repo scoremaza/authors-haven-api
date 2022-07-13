@@ -6,6 +6,7 @@ from core_apps.ratings.serializers import RatingSerializer
 
 from .custom_tag_field import TagRelatedField
 
+
 class ArticleViewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ArticleViews
@@ -91,8 +92,8 @@ class ArticleSerializer(serializers.ModelSerializer):
             "created_at",
             "updated_at",
         ]
-       
-        
+
+
 class ArticleCreateSerializer(serializers.ModelSerializer):
     tags = TagRelatedField(many=True, required=False)
     banner_image = serializers.SerializerMethodField()
