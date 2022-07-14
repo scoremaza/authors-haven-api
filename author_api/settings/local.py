@@ -1,7 +1,7 @@
 from pickle import TRUE
-
-from .base import *
 from .base import env
+from .base import *
+
 
 DEBUG = TRUE
 # SECURITY WARNING: keep the secret key used in production secret!
