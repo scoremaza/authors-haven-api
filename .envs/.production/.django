@@ -3,7 +3,7 @@ DJANGO_SECRET_KEY=RZOLRPXO4CoPkvo1wyH0tbGcT6jTG0PaDzAvtUFX6lTEbILrxgPJ3Lnb3m6dZk
 
 DJANGO_ADMIN_URL=adminsdashbaord/
 
-DJANGO_ALLOWED_HOSTS=137.184.213.73, www.enlighten-e.com, enlighten-e.com
+DJANGO_ALLOWED_HOSTS=www.enlighten-e.com,enlighten-e.com,137.184.213.73
 
 RABBITMQ_DEFAULT_USER=admin
 RABBITMQ_DEFAULT_PASS=adminwork1out
