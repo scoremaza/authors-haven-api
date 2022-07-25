@@ -1,13 +1,12 @@
+
 from .base import *
 from .base import env
 
 
-from .base import *
-from .base import env
 
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["enlighteneapps.com"])
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["www.enlighten-e.com"])
 ADMIN_URL = env("DJANGO_ADMIN_URL")
 
 DATABASES = {"default": env.db("DATABASE_URL")}
@@ -36,7 +35,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_FROM_EMAIL = env(
     "DJANGO_DEFAULT_FROM_EMAIL",
-    default="Authors Haven Support <admin@enlightene.com>",
+    default="Authors Haven Support <admin@enlighten-e.com>",
 )
 
 SITE_NAME = "Authors Haven"

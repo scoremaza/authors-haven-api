@@ -3,6 +3,7 @@
 .coverage
 .DS_Store
 staticfiles
+mac-ven/*
 #.envs/*
 #!.envs/.local/
 myenv/*
