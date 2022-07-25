@@ -1,0 +1,22 @@
+DJANGO_SETTINGS_MODULE=author_api.settings.production
+DJANGO_SECRET_KEY=RZOLRPXO4CoPkvo1wyH0tbGcT6jTG0PaDzAvtUFX6lTEbILrxgPJ3Lnb3m6dZk0a
+
+DJANGO_ADMIN_URL=adminsdashbaord/
+
+DJANGO_ALLOWED_HOSTS=137.184.213.73, www.enlighten-e.com, enlighten-e.com
+
+RABBITMQ_DEFAULT_USER=admin
+RABBITMQ_DEFAULT_PASS=adminwork1out
+
+CELERY_BROKER=amqp://admin:adminwork1out@rabbitmq:5672/
+CELERY_BACKEND=redis://redis:6379/0
+
+DJANGO_SECURE_SSL_REDIRECT=False
+
+CELERY_FLOWER_USER=admin
+CELERY_FLOWER_PASSWORD=adminwork1out
+
+SMTP_MAILGUN_PASSWORD=ade6b43dc35204fc1062b9d48704780f-18e06deb-c10a380c
+DOMAIN=www.enlighten-e.com
+
+SIGNING_KEY=akXJR-es9bHTw_IMEmE0lk93cmBdsywMDc5qlN_6NfJsr7enFs0

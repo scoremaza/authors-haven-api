@@ -8,5 +8,5 @@ EMAIL_PORT=1025
 
 CELERY_FLOWER_USER=admin
 CELERY_FLOWER_PASSWORD=admin123456
-
+#Command to generate this signing_key is 
 SIGNING_KEY=akXJR-es9bHTw_IMEmE0lk93cmBdsywMDc5qlN_6NfJsr7enFs0
