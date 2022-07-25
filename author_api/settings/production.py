@@ -7,7 +7,7 @@ from .base import env
 
 SECRET_KEY = env("DJANGO_SECRET_KEY")
 
-ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["enlighteneapps.com"])
+ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["enlighten-e.com"])
 ADMIN_URL = env("DJANGO_ADMIN_URL")
 
 DATABASES = {"default": env.db("DATABASE_URL")}
